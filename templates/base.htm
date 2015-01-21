@@ -1,0 +1,85 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+
+## set up a StaticRenderer object to enable the CSS/JS automatic inclusion magic.
+<%! from django_mako_plus.controller import static_files %>
+<%  static_renderer = static_files.StaticRenderer(self) %>
+
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <head>
+    
+    <title>HomePage</title>
+    
+    ## add any site-wide scripts or CSS here; for example, jquery:
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></link>
+        
+    
+
+    ## render the css with the same name as this page
+    ${ static_renderer.get_template_css(request, context)  }
+  
+  </head>
+  <body>
+  
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><span class="badge">new!</span>Colonial Heritage Foundation</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="/items">Browse</a></li>
+                    <li><a href="/items">Rent </a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li data-toggle="modal" data-target="#loginModal"><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+      
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 left-nav">
+                <ul>
+                    <li><a href="/about">about</a></li>
+                    <li><a href="/contact">contact</a></li>
+                    <li><a href="/terms">terms</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <%block name="content">
+                </%block>
+            </div>
+        </div>
+    </div>
+      <div class="modal hide" id="loginModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              header
+          </div>
+          <div class="modal-body">
+              body
+          </div>
+          <div class="modal-footer">
+            footer
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <footer>
+        <div class="well">Blake Wight</div>
+    </footer>
+  
+    ## render the JS with the same name as this page
+    ${ static_renderer.get_template_js(request, context)  }  
+  </body>
+</html>
