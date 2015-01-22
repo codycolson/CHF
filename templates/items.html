@@ -1,14 +1,41 @@
 <%inherit file="base.htm" />
 <%block name="content">
-    <div class="row">
-        <img src="">
-        <div class="row well">
-            <img src="" alt="">
-            Some fancy information about the Product
+    <div class="row well col-md-11">
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="Search" placeholder="Search For An Item">
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Any <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Any</a></li>
+                <li><a href="#">Buy</a></li>
+                <li><a href="#">Rent</a></li>
+              </ul>
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+        </form>
+    </div>
+    <div class="row well col-md-11">
+        <div class="col-md-2">
+            <img src="${STATIC_URL}homepage/media/colonial_jacket.jpg" alt="">
         </div>
-        <div class="row well">
-            <img src="" alt="">
-            Some even more fancy information about a product.
+        <div class="row col-md-10">
+            Some fancy information about the Product
+            <div class="text-muted">FOR RENT: $3.00/day</div>
+        </div>
+    </div>
+    <div class="row well col-md-11">
+        <div class="col-md-2">
+            <img src="${STATIC_URL}homepage/media/loom.jpg" alt="">
+        </div>
+        <div class="row col-md-10">
+            <div>
+                <p class="text-left">Some even more fancy information about a product.<span class="text-right text-danger">OUT OF STOCK!</span></p>
+            </div>
+            <div class="text-muted">FOR SALE: $69.99</div>
         </div>
     </div>
 </%block>

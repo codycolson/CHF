@@ -28,13 +28,13 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/"><span class="badge">new!</span>Colonial Heritage Foundation</a>
+                    <a class="navbar-brand" href="/"> Colonial Heritage Foundation</a>
                 </div>
                 <div class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li><a href="/items">Browse</a></li>
                     <li><a href="/items">Rent </a></li>
-                  </ul>
+                  </ul>2
                   <ul class="nav navbar-nav navbar-right">
                     <li data-toggle="modal" data-target="#loginModal"><a href="#">Login</a></li>
                     <li><a href="#">Register</a></li>
@@ -46,14 +46,14 @@
       
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 left-nav">
-                <ul>
+            <div class="col-md-1 left-nav">
+                <ul class="nav nav-pills nav-stacked">
                     <li><a href="/about">about</a></li>
                     <li><a href="/contact">contact</a></li>
                     <li><a href="/terms">terms</a></li>
                 </ul>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-11">
                 <%block name="content">
                 </%block>
             </div>
@@ -76,7 +76,11 @@
     </div>
       
     <footer>
-        <div class="well">Blake Wight</div>
+        <div class="row well">
+            <div class="col-md-4">about</div>
+            <div class="col-md-4">contact</div>
+            <div class="col-md-4">terms</div>
+        </div>
     </footer>
   
     ## render the JS with the same name as this page
